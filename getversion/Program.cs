@@ -17,6 +17,11 @@ namespace getversion
 
         static int Main(string[] args)
         {
+            if (args.Contains("?"))
+            {
+                Help();
+                return 0;
+            }
             string versionext = "", verfile = null;
 
             Dictionary<string, string> replace = new Dictionary<string, string>();
@@ -57,7 +62,6 @@ namespace getversion
                         }
                         break;
 
-                    case "?":
                     case "help":
                         Help();
                         return 0;
